@@ -2,9 +2,9 @@
 const {Sequelize} = require('sequelize')
 
 const sequelize = new Sequelize(
-    'proj',
+    'blog',
     'root',
-    'Root1234',
+    'H960205h',
     {
         dialect:"mysql",
         host:"localhost"
