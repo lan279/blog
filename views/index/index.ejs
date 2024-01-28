@@ -1,0 +1,42 @@
+<%- include('../components/header.ejs') %>
+
+    <!-- 主頁面 -->
+
+    <div style="position: relative;top:70px" class="container">
+      <!-- 用迴圈重複 post -->
+      <% for(let post of posts){%>
+
+        <div style="margin-top: 30px;margin-left: 200px;margin-right: 200px;" class="card mb-3">
+          <a href="/detail/<%= post.id %>">   <!-- http://127.0.0.1:3000/detail/1 -->
+            <img src="/<%= post.image %>" class="card-img-top" alt="...">
+          </a>
+          <div class="card-body">
+            <div style="display: flex;">
+              <span style="margin-right: 5px; color:#55575b;;   position: relative;top: 7.5px;" class="material-symbols-outlined">
+                home
+              </span>
+              <h3 style="color:#55575b;" class="card-title"><%= post.title %></h5>
+            </div>
+            <hr>
+
+            <div style="display: flex;margin-top: 10px;">
+              <span style="position: relative;bottom: 2px;;margin-right: 5px;font-weight: 300;margin-right: 5px;" class="material-symbols-outlined">
+                description
+              </span>
+              <p class="card-text"><%= post.content %></p>
+            </div>
+
+            <div style="display: flex;margin-top: 10px;color: #737c83;">
+              <span style="position: relative;bottom: 2px;;margin-right: 5px;font-weight: 300;margin-right: 5px;" class="material-symbols-outlined">
+                event
+              </span>
+              <p class="card-text"><small class="text-muted"><%= post.createdAt %></small></p>
+
+            </div>
+          </div>
+        </div>
+      <% } %>
+        
+    </div>
+
+<%- include('../components/footer.ejs') %>

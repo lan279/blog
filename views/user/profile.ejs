@@ -1,0 +1,26 @@
+<%- include('../components/profile-header.ejs') %>
+<img src="/<%= user.bg %>" style="width: 100%;height: 500px;object-fit: cover;">
+<img src="/<%= user.avatar %>" style="height: 180px;width: 180px;object-fit: cover;position: relative;left: 100px;bottom:100px;border-radius: 300px;border: 5px solid;border-color: white;">
+<div style="position: relative;left: 300px;bottom: 170px">
+    <h3 ><%= user.username %></h3>
+    <p style="color: #717a80;">加入時間：<%= user.createdAt %></p>
+    <a href="/editProfile/<%= user.id %>" class="btn btn-outline-dark">編輯個人檔案</a>
+
+</div>
+<div style="position: relative;bottom: 150px">
+    <div style="width: 85%;margin: auto;">
+        <hr >
+    
+        <div >
+            <a style="color: darkgray;text-decoration: none;" href="/">home page</a>
+            <a style="margin-left: 20px;color: darkgray;text-decoration: none;" href="/user">user</a>
+            <a style="margin-left: 20px;color: darkgray;text-decoration: none;" href="/post">post </a>
+    
+        </div>
+    </div>
+
+</div>
+
+
+
+<%- include('../components/footer.ejs') %>

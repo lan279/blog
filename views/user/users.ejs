@@ -1,0 +1,47 @@
+<%- include('../components/header.ejs') %>
+
+
+    <!-- 主頁面 -->
+    <div style="position: relative;top:70px" class="container">
+        <h1 style="margin-top: 50px;">User list</h1>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Date</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <% for(let user of users){ %>
+
+                    <tr>
+                        <th><%= user.id %></th>
+                        <td><%= user.username %></td>
+                        <td><%= user.createdAt %></td>
+                        <td>
+                          <div style="display: flex;">
+
+                          
+                            <form action = "/delete_user" method="POST">
+                                <input type="hidden" name ="id" value="<%= user.id %>">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                            <a href="/profile/<%= user.id %>" style="margin-left: 5px;height:38px"  class="btn btn-primary">Information</a>
+                           
+                          </div>
+                        </td>
+                      </tr>
+
+                <% } %>
+             
+              
+            </tbody>
+          </table>
+
+    </div>
+
+<%- include('../components/footer.ejs') %>

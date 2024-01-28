@@ -1,0 +1,23 @@
+<%- include('../components/header.ejs') %>
+
+<div style="position: relative;top:70px" class="container">
+    <h1>New Article</h1>
+
+    <form action = "/post" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label  class="form-label">Title</label>
+          <input name ="title" type="text" class="form-control" placeholder="input your title">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Image</label>
+          <input name="image" type="file" class="form-control"  placeholder="input image">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Content</label>
+            <textarea name="content" style="height: 80px;" type="text" class="form-control" ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<%- include('../components/footer.ejs') %>

@@ -1,0 +1,19 @@
+<%- include('../components/header') %>
+<div style="position: relative;top:70px" class="container">
+    <h1>Edit Profile</h1>
+
+    <form action="/editProfile/<%= user_id %>" method="post" enctype="multipart/form-data">
+        
+        <div class="mb-3">
+          <label  class="form-label">Avatar</label>
+          <input  name="avatar" type="file" class="form-control"  placeholder="input image">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Background image</label>
+            <input  name="bg-image" type="file" class="form-control"  placeholder="input image">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<%- include('../components/footer') %>

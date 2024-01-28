@@ -1,0 +1,26 @@
+<%- include('../components/header') %>
+<div style="position: relative;top:70px" class="container">
+    <div style="display: flex;">
+        <div style="margin: 35px;" class="col-md-6">
+            <img src="/<%= post.image %>" style="width: 100%;">
+        </div>
+        <div style="margin: 35px;" class="col-md-6">
+            <h1><%= post.title %></h1>
+            <p style="color: rgb(94, 93, 93);"><%= post.content %></p>
+            <p style="color: rgb(94, 93, 93);"><%= post.createdAt %></p>
+            <div style="display: flex;">
+                <a style="height: 38px;margin-right: 5px;" href="/edit/<%= post.id %>" type="button" class="btn btn-outline-primary">編輯文章</a>
+
+                <form action="/delete_post/<%= post.id %>" method="POST">
+                    <button type="submit" class="btn btn-outline-danger">刪除文章</button>
+                </form>
+
+            </div>
+            
+
+
+        </div>
+    </div>
+</div>
+
+<%- include('../components/footer') %>
